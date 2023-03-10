@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+      <p>Page de test</p>
+    
+      <script src="https://cdn.socket.io/4.5.4/socket.io.min.js" crossorigin="anonymous"></script>
+      <script>
+          var socket = io('http://127.0.0.1:5001', { transports : ['websocket'] });
+
+          socket.emit("key", "value");
+
+          socket.on("key2", (arg) => {
+              console.log(arg);
+          });
+      </script>
+    </body>
+</html>
